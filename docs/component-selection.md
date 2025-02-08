@@ -12,6 +12,7 @@ In order for this project to be successful, there are many criteria that must be
 
 ## Microcontroller
 ### Option 1
+![Image:PIC16F18875](docs\assets\images\150~C04-076~PT~44.jpg)
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **PIC16F18875**   | Multiple timers, hardware PWM, and various communication peripherals  |No WiFi/Bluetooth | $1.82 (DigiKey)(https://www.digikey.com/en/products/detail/microchip-technology/PIC16F18875-I-PT/5803538)
@@ -42,6 +43,7 @@ The microcontroller I decided to use for this project was the PIC16F18875, as th
 
 ## Actuator
 ### Option 1
+![Image:1528-1367-ND](docs\assets\images\MFG_918.jpg)
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **1528-1367-ND**   | Very common and widely supported by a variety of stepper drivers like the A4988 |Slightly expensive| $14.00 (Adafruit) (https://www.adafruit.com/product/324)
