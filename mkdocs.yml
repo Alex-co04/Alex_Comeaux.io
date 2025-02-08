@@ -55,6 +55,12 @@ extra_css:
 extra_javascript:
  - javascripts/mathjax.js
  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Block Diagram: Block_Diagram.md
+  - charts: second-page.md
+  - Component Selection: component-selection.md
     
 not_in_nav: |
   static
