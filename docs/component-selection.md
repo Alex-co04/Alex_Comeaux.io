@@ -67,6 +67,7 @@ The actuator I decided to go with for this project is option 1, the Nema 14 step
 ## Motor Driver
 ### Option 1
 ![Image:A4988](docs\assets\images\620~28QFN-1-5X5~ET~28_web(640x640).jpg)
+
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **A4988**   | Designed for bipolar stepper motors |Overheats quickly at higher currents| $4.26 (Digikey) (https://www.digikey.com/en/products/detail/allegro-microsystems/A4988SETTR-T/2237991?s=N4IgTCBcDaIIIBYCcAOFIC6BfIA) 
