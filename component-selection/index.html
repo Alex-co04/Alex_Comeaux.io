@@ -516,7 +516,7 @@
 <h1 id="components">Components</h1>
 <h2 id="microcontroller">Microcontroller</h2>
 <h3 id="option-1">Option 1</h3>
-<p><a class="glightbox" href="docs\assets\images\150~C04-076~PT~44.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:PIC16F18875" src="docs\assets\images\150~C04-076~PT~44.jpg" /></a>
+<p><a class="glightbox" href="../assets/images/150~C04-076~PT~44.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:PIC16F18875" src="../assets/images/150~C04-076~PT~44.jpg" /></a>
 | <strong>Option</strong> | <strong>Pros</strong> | <strong>Cons</strong> | <strong>Unit Cost &amp; Link</strong> |
 | --- | --- | --- | --- |
 | <strong>PIC16F18875</strong>   | Multiple timers, hardware PWM, and various communication peripherals  |No WiFi/Bluetooth | $1.82 (DigiKey)(https://www.digikey.com/en/products/detail/microchip-technology/PIC16F18875-I-PT/5803538)
@@ -602,13 +602,43 @@
 <p>The microcontroller I decided to use for this project was the PIC16F18875, as there is an abundance of resources and information online,  There also more examples online on how to use a stepper driver with this PIC controller than any other PIC controller. In addition to this, although a slightly older model, the microcontroller is fully compatible with MPLabX and the Snap debugger.</p>
 <h2 id="actuator">Actuator</h2>
 <h3 id="option-1_1">Option 1</h3>
-<p><a class="glightbox" href="docs\assets\images\MFG_918.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:1528-1367-ND" src="docs\assets\images\MFG_918.jpg" /></a>
-| <strong>Option</strong> | <strong>Pros</strong> | <strong>Cons</strong> | <strong>Unit Cost &amp; Link</strong> |
-| --- | --- | --- | --- |
-| <strong>1528-1367-ND</strong>   | Very common and widely supported by a variety of stepper drivers like the A4988 |Slightly expensive| $14.00 (Adafruit) (https://www.adafruit.com/product/324)
-| |  Offers a good balance between torque and size/weight  |Potentially No Integrated Gearbox
-| | Mid range torque  |
-| | 9-12V (compatible with most motor drivers)|</p>
+<p><a class="glightbox" href="../assets/images/MFG_918.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="1528-1367-ND" src="../assets/images/MFG_918.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+<th><strong>Unit Cost &amp; Link</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1528-1367-ND</strong></td>
+<td>Very common and widely supported by a variety of stepper drivers like the A4988</td>
+<td>Slightly expensive</td>
+<td>$14.00 (Adafruit) (https://www.adafruit.com/product/324)</td>
+</tr>
+<tr>
+<td></td>
+<td>Offers a good balance between torque and size/weight</td>
+<td>Potentially No Integrated Gearbox</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Mid range torque</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>9-12V (compatible with most motor drivers)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="option-2_1">Option 2</h3>
 <table>
 <thead>
@@ -648,10 +678,10 @@
 </table>
 <h2 id="final-selection-1528-1367-nd-option-1">Final Selection: 1528-1367-ND (Option 1)</h2>
 <h4 id="rationale_1">Rationale:</h4>
-<p>The actuator I decided to go with for this project is option 1, the Nema 14 stepper motor. This option is the most realistic as it will be easiest to interface with a stepper driver and PIC microcontroller. Additonally, this actuator is the easiest to use in terms of precise movement.  </p>
+<p>The actuator I decided to go with for this project is option 1, the Nema 14 stepper motor. This option is the most realistic as it will be easiest to interface with a stepper driver and PIC microcontroller. Additionally, this actuator is the easiest to use in terms of precise movement.  </p>
 <h2 id="motor-driver">Motor Driver</h2>
 <h3 id="option-1_2">Option 1</h3>
-<p><a class="glightbox" href="docs\assets\images\620~28QFN-1-5X5~ET~28_web(640x640).jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:A4988" src="docs\assets\images\620~28QFN-1-5X5~ET~28_web(640x640).jpg" /></a></p>
+<p><a class="glightbox" href="../assets/images/620~28QFN-1-5X5~ET~28_web%28640x640%29.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Motor-Driver" src="../assets/images/620~28QFN-1-5X5~ET~28_web%28640x640%29.jpg" /></a></p>
 <table>
 <thead>
 <tr>
@@ -730,42 +760,13 @@
 <p>I concluded that this driver was the most suitable for my project because most of the online resources on how to control stepper motors used this particular driver. Additionally, although it lacks reverse voltage protection, it is not difficult to implement flyback diodes. </p>
 <h2 id="light-detection">Light Detection</h2>
 <h3 id="option-1_3">Option 1</h3>
-<table>
-<thead>
-<tr>
-<th><strong>Option</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-<th><strong>Unit Cost &amp; Link</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>PDV-P9203 Photo-resistor</strong></td>
-<td>Cost effective</td>
-<td>Tolerance in resistance varies, requires tuning</td>
-<td>$1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)</td>
-</tr>
-<tr>
-<td></td>
-<td>Simple to interface</td>
-<td>Slow response time</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Wide dynamic range, good for detecting most visible wavelengths</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p><a class="glightbox" href="../assets/images/photresistor.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Photo-Resistor" src="../assets/images/photresistor.jpg" /></a>
+| <strong>Option</strong> | <strong>Pros</strong> | <strong>Cons</strong> | <strong>Unit Cost &amp; Link</strong> |
+| --- | --- | --- | --- |
+| <strong>PDV-P9203 Photo-resistor</strong>   | Cost effective |Tolerance in resistance varies, requires tuning| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
+| |  Simple to interface | Slow response time
+| | Wide dynamic range, good for detecting most visible wavelengths  |
+| </p>
 <h3 id="option-2_3">Option 2</h3>
 <table>
 <thead>
@@ -807,7 +808,7 @@
 <h4 id="rationale_3">Rationale:</h4>
 <p>I decided that the best visible light detector for the solar array is the PDV-P9203 Photo-resistor. This is because it will be the easiest to interface with the PIC microcontroller. Additionally, there are many example project online using the same photo-resistor. </p>
 <h2 id="basic-mcc-setup">Basic MCC Setup</h2>
-<p><a class="glightbox" href="docs\assets\images\image_2025-02-07_183502901.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:MCC" src="docs\assets\images\image_2025-02-07_183502901.png" /></a></p>
+<p><a class="glightbox" href="../assets/images/image_2025-02-07_183502901.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:MCC" src="../assets/images/image_2025-02-07_183502901.png" /></a></p>
 <p>This is my rudamentary setup for the microcontroller's MCC in MPLabX. As you can see, there are pins designated for the ADC (sensor reading), PWM (motor control) and UART (communication with other subsystems)</p>
 
 
