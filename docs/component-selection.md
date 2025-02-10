@@ -12,7 +12,7 @@ In order for this project to be successful, there are many criteria that must be
 
 ## Microcontroller
 ### Option 1
-![Image:PIC16F18875](docs\assets\images\150~C04-076~PT~44.jpg)
+![Image:PIC16F18875](./assets/images/150~C04-076~PT~44.jpg)
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **PIC16F18875**   | Multiple timers, hardware PWM, and various communication peripherals  |No WiFi/Bluetooth | $1.82 (DigiKey)(https://www.digikey.com/en/products/detail/microchip-technology/PIC16F18875-I-PT/5803538)
@@ -43,7 +43,8 @@ The microcontroller I decided to use for this project was the PIC16F18875, as th
 
 ## Actuator
 ### Option 1
-![Image:1528-1367-ND](docs\assets\images\MFG_918.jpg)
+![1528-1367-ND](./assets/images/MFG_918.jpg)
+
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **1528-1367-ND**   | Very common and widely supported by a variety of stepper drivers like the A4988 |Slightly expensive| $14.00 (Adafruit) (https://www.adafruit.com/product/324)
@@ -62,11 +63,11 @@ The microcontroller I decided to use for this project was the PIC16F18875, as th
 
 ## Final Selection: 1528-1367-ND (Option 1)
 #### Rationale:
-The actuator I decided to go with for this project is option 1, the Nema 14 stepper motor. This option is the most realistic as it will be easiest to interface with a stepper driver and PIC microcontroller. Additonally, this actuator is the easiest to use in terms of precise movement.  
+The actuator I decided to go with for this project is option 1, the Nema 14 stepper motor. This option is the most realistic as it will be easiest to interface with a stepper driver and PIC microcontroller. Additionally, this actuator is the easiest to use in terms of precise movement.  
 
 ## Motor Driver
 ### Option 1
-![Image:A4988](docs\assets\images\620~28QFN-1-5X5~ET~28_web(640x640).jpg)
+![Motor-Driver](./assets/images/620~28QFN-1-5X5~ET~28_web(640x640).jpg)
 
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
@@ -89,6 +90,7 @@ I concluded that this driver was the most suitable for my project because most o
 
 ## Light Detection 
 ### Option 1
+![Photo-Resistor](./assets/images/photresistor.jpg)
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **PDV-P9203 Photo-resistor**   | Cost effective |Tolerance in resistance varies, requires tuning| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
@@ -109,6 +111,6 @@ I concluded that this driver was the most suitable for my project because most o
 I decided that the best visible light detector for the solar array is the PDV-P9203 Photo-resistor. This is because it will be the easiest to interface with the PIC microcontroller. Additionally, there are many example project online using the same photo-resistor. 
 
 ## Basic MCC Setup
-![Image:MCC](docs\assets\images\image_2025-02-07_183502901.png)
+![Image:MCC](./assets/images/image_2025-02-07_183502901.png)
 
 This is my rudamentary setup for the microcontroller's MCC in MPLabX. As you can see, there are pins designated for the ADC (sensor reading), PWM (motor control) and UART (communication with other subsystems)
