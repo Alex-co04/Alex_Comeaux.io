@@ -13,6 +13,7 @@ In order for this project to be successful, there are many criteria that must be
 ## Microcontroller
 ### Option 1
 ![Image:PIC16F18875](./assets/images/150~C04-076~PT~44.jpg)
+
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **PIC16F18875**   | Multiple timers, hardware PWM, and various communication peripherals  |No WiFi/Bluetooth | $1.82 (DigiKey)(https://www.digikey.com/en/products/detail/microchip-technology/PIC16F18875-I-PT/5803538)
