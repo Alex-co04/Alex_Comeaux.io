@@ -85,9 +85,30 @@ The actuator I decided to go with for this project is option 1, the Nema 14 step
 | | Cost effective  |
 | | 6-50V |
 
-## Final Selection: A4988 (Option 1)
+## Final Selection: ULN2003 (Option 2)
 #### Rationale:
 I concluded that this driver was the most suitable for my project because most of the online resources on how to control stepper motors used this particular driver. Additionally, although it lacks reverse voltage protection, it is not difficult to implement flyback diodes. 
+
+## Power Regulation
+### Option 1
+![Photo-Resistor](./assets/images/Switching_regulator.jpg)
+| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
+| --- | --- | --- | --- |
+| **LM2575T Switching Regulator**   | Detailed datasheet |Only one 5v output| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
+| |  Simple to interface | Relatively expensive
+| | Can handle high voltage in (up to 40V)  |
+| 
+
+### Option 2
+| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
+| --- | --- | --- | --- |
+| **UA7812CKCSE3 Switching Regulator**   | Cost effective |Relatively inefficient| $.85 (Digikey) (https://www.digikey.com/en/products/detail/rochester-electronics,-llc/UA7812CKCSE3/13464984?gclsrc=aw.ds&&utm_adgroup=Integrated%20Circuits%20%28ICs%29&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_DK%2BSupplier_Rochester&utm_term=&utm_content=Integrated%20Circuits%20%28ICs%29&utm_id=go_cmp-14247218536_adg-128566365520_ad-539599078936_pla-354083419805_dev-c_ext-_prd-13464984_sig-CjwKCAiAlPu9BhAjEiwA5NDSA5MPX2QTXo8NFO1wKjSwAMdMx7QoN-i5GsXDH0R884UZbLYzVt-gwxoCvdEQAvD_BwE&gad_source=1&gclid=CjwKCAiAlPu9BhAjEiwA5NDSA5MPX2QTXo8NFO1wKjSwAMdMx7QoN-i5GsXDH0R884UZbLYzVt-gwxoCvdEQAvD_BwE)
+| |  Simple to interface | 
+| | Can handle high voltage in (up to 24V)  |
+
+## Final Selection: LM2575T (Option 1)
+#### Rationale:
+I came to the conclusion that the first option would be best, as I need a robust and easy to interface voltage regulator. The first option has a very detailed datasheet with several example application diagrams, which will make it very easy to interface. 
 
 ## Light Detection 
 ### Option 1
