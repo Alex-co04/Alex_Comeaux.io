@@ -1,7 +1,7 @@
 # Schematic
 
 ## Schematic Image
- ![Image:Schematic](./assets/images/image_2025-02-21_232433238.png)
+ ![Image:Schematic](./assets/images/image.png)
 
 ## 📁 Download the Schematic Diagram  
 [Download Schematic Diagram PDF](./assets/documents/314SchematicDesign.pdf)
