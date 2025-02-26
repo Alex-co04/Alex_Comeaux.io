@@ -823,11 +823,54 @@
 </tr>
 </tbody>
 </table>
-<h2 id="final-selection-a4988-option-1">Final Selection: A4988 (Option 1)</h2>
+<h2 id="final-selection-uln2003-option-2">Final Selection: ULN2003 (Option 2)</h2>
 <h4 id="rationale_2">Rationale:</h4>
 <p>I concluded that this driver was the most suitable for my project because most of the online resources on how to control stepper motors used this particular driver. Additionally, although it lacks reverse voltage protection, it is not difficult to implement flyback diodes. </p>
-<h2 id="light-detection">Light Detection</h2>
+<h2 id="power-regulation">Power Regulation</h2>
 <h3 id="option-1_3">Option 1</h3>
+<p><a class="glightbox" href="../assets/images/Switching_regulator.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Photo-Resistor" src="../assets/images/Switching_regulator.jpg" /></a>
+| <strong>Option</strong> | <strong>Pros</strong> | <strong>Cons</strong> | <strong>Unit Cost &amp; Link</strong> |
+| --- | --- | --- | --- |
+| <strong>LM2575T Switching Regulator</strong>   | Detailed datasheet |Only one 5v output| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
+| |  Simple to interface | Relatively expensive
+| | Can handle high voltage in (up to 40V)  |
+| </p>
+<h3 id="option-2_3">Option 2</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+<th><strong>Unit Cost &amp; Link</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UA7812CKCSE3 Switching Regulator</strong></td>
+<td>Cost effective</td>
+<td>Relatively inefficient</td>
+<td>$.85 (Digikey) (https://www.digikey.com/en/products/detail/rochester-electronics,-llc/UA7812CKCSE3/13464984?gclsrc=aw.ds&amp;&amp;utm_adgroup=Integrated%20Circuits%20%28ICs%29&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_DK%2BSupplier_Rochester&amp;utm_term=&amp;utm_content=Integrated%20Circuits%20%28ICs%29&amp;utm_id=go_cmp-14247218536_adg-128566365520_ad-539599078936_pla-354083419805_dev-c_ext-_prd-13464984_sig-CjwKCAiAlPu9BhAjEiwA5NDSA5MPX2QTXo8NFO1wKjSwAMdMx7QoN-i5GsXDH0R884UZbLYzVt-gwxoCvdEQAvD_BwE&amp;gad_source=1&amp;gclid=CjwKCAiAlPu9BhAjEiwA5NDSA5MPX2QTXo8NFO1wKjSwAMdMx7QoN-i5GsXDH0R884UZbLYzVt-gwxoCvdEQAvD_BwE)</td>
+</tr>
+<tr>
+<td></td>
+<td>Simple to interface</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Can handle high voltage in (up to 24V)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="final-selection-lm2575t-option-1">Final Selection: LM2575T (Option 1)</h2>
+<h4 id="rationale_3">Rationale:</h4>
+<p>I came to the conclusion that the first option would be best, as I need a robust and easy to interface voltage regulator. The first option has a very detailed datasheet with several example application diagrams, which will make it very easy to interface. </p>
+<h2 id="light-detection">Light Detection</h2>
+<h3 id="option-1_4">Option 1</h3>
 <p><a class="glightbox" href="../assets/images/photresistor.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Photo-Resistor" src="../assets/images/photresistor.jpg" /></a>
 | <strong>Option</strong> | <strong>Pros</strong> | <strong>Cons</strong> | <strong>Unit Cost &amp; Link</strong> |
 | --- | --- | --- | --- |
@@ -835,7 +878,7 @@
 | |  Simple to interface | Slow response time
 | | Wide dynamic range, good for detecting most visible wavelengths  |
 | </p>
-<h3 id="option-2_3">Option 2</h3>
+<h3 id="option-2_4">Option 2</h3>
 <table>
 <thead>
 <tr>
@@ -873,7 +916,7 @@
 </tbody>
 </table>
 <h2 id="final-selection-pdv-p9203-photo-resistor-option-1">Final Selection: PDV-P9203 Photo-resistor (Option 1)</h2>
-<h4 id="rationale_3">Rationale:</h4>
+<h4 id="rationale_4">Rationale:</h4>
 <p>I decided that the best visible light detector for the solar array is the PDV-P9203 Photo-resistor. This is because it will be the easiest to interface with the PIC microcontroller. Additionally, there are many example project online using the same photo-resistor. </p>
 <h2 id="basic-mcc-setup">Basic MCC Setup</h2>
 <p><a class="glightbox" href="../assets/images/image_2025-02-07_183502901.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:MCC" src="../assets/images/image_2025-02-07_183502901.png" /></a></p>
