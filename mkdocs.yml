@@ -62,6 +62,7 @@ nav:
   - charts: second-page.md
   - Component Selection: component-selection.md 
   - Schematic: schematic.md
+  - Bill of Materials: Bill_Of_Materials.md
   
     
 not_in_nav: |
