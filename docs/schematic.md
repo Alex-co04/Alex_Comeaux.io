@@ -5,7 +5,12 @@ This page contains the schematic diagram for this subsystem
 
 
 ## Schematic Image
- ![Image:Schematic](./assets/images/image.png)
+ ![Image:Schematic](./assets/images/FinalSchematic.jpg)
+
+## Power Budget
+The following is the power budget for each component selected
+
+ ![Image:Schematic](./assets/images/PowerBudget.jpg)
 
 ## 📁 Download the Schematic Diagram  
 [Download Schematic Diagram PDF](./assets/documents/314SchematicDesign.pdf)
