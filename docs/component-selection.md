@@ -12,7 +12,6 @@ In order for this project to be successful, there are many criteria that must be
 
 ## Microcontroller
 ### Option 1
-![Image:PIC16F18875](./assets/images/150~C04-076~PT~44.jpg)
 
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
@@ -37,18 +36,18 @@ In order for this project to be successful, there are many criteria that must be
 | | Can run on very little power  |
 | | 5V operation (compatible with most motor drivers)|
 
-## Final Selection: PIC16F18875 (Option 3)
+## Final Selection: PIC18F47Q10 (Option 2)
+![Image:PIC16F18875](./assets/images/150~C04-076~PT~44.jpg)
 #### Rationale:
-The microcontroller I decided to use for this project was the PIC16F18875, as there is an abundance of resources and information online,  There also more examples online on how to use a stepper driver with this PIC controller than any other PIC controller. In addition to this, although a slightly older model, the microcontroller is fully compatible with MPLabX and the Snap debugger.
+The microcontroller I decided to use for this project was the PIC18F47Q10, as there is an abundance of resources and information online,  There also more examples online on how to use a stepper driver with this PIC controller than any other PIC controller. In addition to this, the microcontroller is proven to have reliable SPI connection as well as plenty of ram to control more than one motor driver. 
 
 
-## Actuator
+## Stepper Motor
 ### Option 1
-![1528-1367-ND](./assets/images/MFG_918.jpg)
 
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
-| **1528-1367-ND**   | Very common and widely supported by a variety of stepper drivers like the A4988 |Slightly expensive| $14.00 (Adafruit) (https://www.adafruit.com/product/324)
+| **1528-1367-ND**   | Very common and widely supported by a variety of stepper drivers like the ULN2003 |Slightly expensive| $14.00 (Adafruit) (https://www.adafruit.com/product/324)
 | |  Offers a good balance between torque and size/weight  |Potentially No Integrated Gearbox
 | | Mid range torque  |
 | | 9-12V (compatible with most motor drivers)|
@@ -57,18 +56,44 @@ The microcontroller I decided to use for this project was the PIC16F18875, as th
 ### Option 2
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
-| **N20 DC Motor with Magnetic Encoder**   | Common low-torque DC motor, online resources |Requires a microcontroller with interrupts or high-speed polling to read the encoder signals correctly.| 12.50 (Adafruit) (https://www.adafruit.com/product/4638)
-| |  Cheaper than other options | More difficult to make precise movements, coding may be trickier
-| | 1:50 gearbox significantly increases torque output while reducing speed  | 
-| | 6V operational voltage|
+| **QSH4218-35-10-027**   | High Precision |Very expensive| $50.00 (Digikey) (https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/QSH4218-35-10-027/4843425)
+| |  Cheaper than other options | May require a gearbox
+| | High torque at low voltage  | 
+| | 5V operational voltage|
 
 ## Final Selection: 1528-1367-ND (Option 1)
+![1528-1367-ND](./assets/images/MFG_918.jpg)
 #### Rationale:
 The actuator I decided to go with for this project is option 1, the Nema 14 stepper motor. This option is the most realistic as it will be easiest to interface with a stepper driver and PIC microcontroller. Additionally, this actuator is the easiest to use in terms of precise movement.  
 
-## Motor Driver
+
+## Serial Communication DC Motor Driver
 ### Option 1
-![Motor-Driver](./assets/images/620~28QFN-1-5X5~ET~28_web(640x640).jpg)
+
+| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
+| --- | --- | --- | --- |
+| **IFX9201SG**   | Minimal surrounding circuitry | Only 1 motor control| $3.45 (Digikey) (https://www.digikey.com/en/products/detail/infineon-technologies/IFX9201SGAUMA1/5415542?s=N4IgTCBcDaIJIDEAaBOMAGAjAZQOIgF0BfIA)
+| |  Inexpensive  | Possible heat sink needed
+| | Resources available for integration  |
+| | |
+
+
+### Option 2
+| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
+| --- | --- | --- | --- |
+| **DRV8830**   | Common Motor Driver  | Limited resources online| 2.09 (Digikey) (https://www.digikey.com/en/products/detail/texas-instruments/DRV8830DGQR/2520903)
+| |  I2C compatability | I2C may be harder to interface than SPI
+| | Simple surrounding circuitry | 
+| | 5-6V operational voltage|
+
+## Final Selection: IFX9201SG (Option 1)
+![1528-1367-ND](./assets/images/SerialDriver.jpg)
+
+#### Rationale:
+The driver I decided to go with for the DC motor was option 1. This is because the surrounding circuitry is easier to set up, and there are more resources at my disposal for integration. Additionally, the motor driver is proven to be working with the PIC18F47Q10 through SPI serial communication. 
+
+## Stepper Motor Driver
+### Option 1
 
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
@@ -86,12 +111,15 @@ The actuator I decided to go with for this project is option 1, the Nema 14 step
 | | 6-50V |
 
 ## Final Selection: ULN2003 (Option 2)
+![Motor-Driver](./assets/images/DCMotorDriver.jpg)
 #### Rationale:
 I concluded that this driver was the most suitable for my project because most of the online resources on how to control stepper motors used this particular driver. Additionally, although it lacks reverse voltage protection, it is not difficult to implement flyback diodes. 
 
 ## Power Regulation
+This project will require two seperate voltage lines, and therefore two voltage regulators. The motors pull too much current to be connected to the same line as the drivers and microcontroller. 
+## 5V Line
+
 ### Option 1
-![Photo-Resistor](./assets/images/Switching_regulator.jpg)
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **LM2575T Switching Regulator**   | Detailed datasheet |Only one 5v output| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
@@ -107,12 +135,38 @@ I concluded that this driver was the most suitable for my project because most o
 | | Can handle high voltage in (up to 24V)  |
 
 ## Final Selection: LM2575T (Option 1)
+![Photo-Resistor](./assets/images/Switching_regulator.jpg)
 #### Rationale:
-I came to the conclusion that the first option would be best, as I need a robust and easy to interface voltage regulator. The first option has a very detailed datasheet with several example application diagrams, which will make it very easy to interface. 
+I came to the conclusion that the first option would be best, as I need a robust and easy to interface voltage regulator. The first option has a very detailed datasheet with several example application diagrams, which will streamline the power supply process. 
+
+## 3.3V Line
+
+
+
+### Option 1
+| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
+| --- | --- | --- | --- |
+| **LMR16006YQ3DDCRQ1 Buck Converter**   | 600mA output current |Mildly complicated application diagram| $3.49 (Digikey) (https://www.digikey.com/en/products/detail/texas-instruments/LMR16006YQ3DDCRQ1/5395814?s=N4IgTCBcDaIDIFkBKBGAbABg2gmgRQGYARIgYSTxRAF0BfIA)
+| |  6-40V input voltage |Potential for swtiching noise
+| | Inexpensive  |
+| 
+
+### Option 2
+| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
+| --- | --- | --- | --- |
+| **1589-MP1584EN-LF-PTR-ND Buck Converter**   | Up to 3A current capacity |Complicated schematic| $1.15 (Digikey) [https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A](https://www.digikey.com/en/products/detail/monolithic-power-systems-inc/MP1584EN-LF-P/18088877)
+| |  6-28V input voltage | Relatively expensive
+| | Efficient  |
+| 
+
+## Final Selection: Buck converter (Option 1)
+![BuckConverter](./assets/images/BuckConverter.jpg)
+#### Rationale:
+I ultimately decided that the buck converter would be the best choice for this application. Not only is it reliable and cheap, it would supply more than enough amperage for the microcontroller and the external motor drivers. 
 
 ## Light Detection 
+
 ### Option 1
-![Photo-Resistor](./assets/images/photresistor.jpg)
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
 | **PDV-P9203 Photo-resistor**   | Cost effective |Tolerance in resistance varies, requires tuning| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
@@ -129,10 +183,13 @@ I came to the conclusion that the first option would be best, as I need a robust
 | 
 
 ## Final Selection: PDV-P9203 Photo-resistor (Option 1)
+![Photo-Resistor](./assets/images/photresistor.jpg)
 #### Rationale:
 I decided that the best visible light detector for the solar array is the PDV-P9203 Photo-resistor. This is because it will be the easiest to interface with the PIC microcontroller. Additionally, there are many example project online using the same photo-resistor. 
+
+
 
 ## Basic MCC Setup
 ![Image:MCC](./assets/images/image_2025-02-07_183502901.png)
 
-This is my rudamentary setup for the microcontroller's MCC in MPLabX. As you can see, there are pins designated for the ADC (sensor reading), PWM (motor control) and UART (communication with other subsystems)
+This is my rudamentary setup for the microcontroller's MCC in MPLabX. As you can see, there are pins designated for the SPI Motor Driver, PWM for the stepper, as well as UART TX and RX pins for upstream and downstream communication.
