@@ -1,4 +1,4 @@
-site_name: EGR314 Report Template
+site_name: EGR314 Solar Actuator Group 306
 site_url: https://embedded-systems-design.github.io/template_report
 repo_url: https://github.com/embedded-systems-design/template_report
 edit_uri: edit/main/docs/
@@ -59,10 +59,10 @@ extra_javascript:
 nav:
   - Home: index.md
   - Block Diagram: Block_Diagram.md
-  - charts: second-page.md
+  - Bill of Materials: Bill_Of_Materials.md
   - Component Selection: component-selection.md 
   - Schematic: schematic.md
-  - Bill of Materials: Bill_Of_Materials.md
+
   
     
 not_in_nav: |
