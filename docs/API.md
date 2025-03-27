@@ -9,16 +9,16 @@ Message type for sending status code of subsystem "Z" to be displayed.
 
 . | byte 1     | byte 2
 -------|------------|---
-Variable Name   | subsys_num | code
+Variable Name   | msg_type | error_code
 Variable Type   | uint8_t (Z) | uint8_t
-Min Value      | 1    | 0
+Min Value      | 4    | 0
 Max Value      | 4    | 2
 
 code number | meaning
 ---|---
-0 | full funtionality
-1 | partial funtionality
-2 | no funtionality
+0 | full functionality
+1 | partial functionality
+2 | no functionality
 
 
 ### Subsystem Error Message  
