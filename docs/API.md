@@ -37,12 +37,12 @@ Example       | 5        | "sensor 1 read error"
 ### Shift Motor  
 Message type for sending a command to rotate base stepper "Y" degrees.
 
-. | byte 1     | byte 2
--------|------------|---
-Variable Name   | motor_num | degree_turn
-Variable Type   | X(uint8_t) | Y(uint8_t)
-Min Value      | 1    | 0
-Max Value      | 2    | 360
+. | byte 1     
+-------|------------
+Variable Name    | degree_turn
+Variable Type    | Y(uint8_t)
+Min Value        | 0
+Max Value        | 360
 
 ### Alignment Frequency
   
@@ -53,7 +53,7 @@ Message type for sending a command to set the panel alignment frequency "X" numb
 Variable Name   | time 
 Variable Type   | X(uint8_t) 
 Min Value      | 0    
-Max Value      | 3    
+Max Value      | 600    
 ## MPLabX Code
 
 [Software](./assets/documents/SolarArray.X.zip)
