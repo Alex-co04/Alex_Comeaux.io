@@ -18,7 +18,7 @@ Message type for sending status code of subsystem "Z" to be displayed.
 . | byte 1     | byte 2
 -------|------------|---
 Variable Name   | msg_type | error_code
-Variable Type   | uint8_t (Z) | uint8_t
+Variable Type   | char | char
 Min Value      | 4    | 0
 Max Value      | 4    | 2
 
@@ -34,30 +34,35 @@ code number | meaning
 ### Shift Motor  
 Message type for sending a command to rotate base stepper "Y" degrees.
 
-. | byte 1     
+. | data byte 1-3     
 -------|------------
 Variable Name    | degree_turn
-Variable Type    | Y(uint8_t)
+Variable Type    | char
 Min Value        | 0
-Max Value        | 360
+Max Value        | 9
 
 Example message according to message structure:
-AZic235YB
-
+AZic2300YB
+or 
+AZac2005YB
+This would read 300 and 5 degrees respectively
 
 ### Alignment Frequency
   
 Message type for sending a command to set the panel alignment frequency "X" number of seconds.
 
-. | byte 1     
+. |  data byte 1-3     
 -------|------------
 Variable Name   | time 
-Variable Type   | X(uint8_t) 
+Variable Type   | char 
 Min Value      | 0    
-Max Value      | 600    
+Max Value      | 9    
 
 Example message according to message structure:
-AZic3
+AZic3025YB
+or
+AZic3005YB
+These messages would read 25 and 5 degrees respectively
 
 
 
