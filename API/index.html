@@ -499,6 +499,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#team-member-ids" class="md-nav__link">
+    Team Member IDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#outgoing-messages" class="md-nav__link">
     Outgoing Messages
   </a>
@@ -509,13 +516,6 @@
           <li class="md-nav__item">
   <a href="#subsystem-status-code" class="md-nav__link">
     Subsystem Status Code
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subsystem-error-message" class="md-nav__link">
-    Subsystem Error Message
   </a>
   
 </li>
@@ -543,6 +543,26 @@
           <li class="md-nav__item">
   <a href="#alignment-frequency" class="md-nav__link">
     Alignment Frequency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-structure-summary" class="md-nav__link">
+    Message Structure Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Structure Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mplabx-code" class="md-nav__link">
+    MPLabX Code
   </a>
   
 </li>
@@ -592,6 +612,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#team-member-ids" class="md-nav__link">
+    Team Member IDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#outgoing-messages" class="md-nav__link">
     Outgoing Messages
   </a>
@@ -602,13 +629,6 @@
           <li class="md-nav__item">
   <a href="#subsystem-status-code" class="md-nav__link">
     Subsystem Status Code
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subsystem-error-message" class="md-nav__link">
-    Subsystem Error Message
   </a>
   
 </li>
@@ -645,6 +665,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#message-structure-summary" class="md-nav__link">
+    Message Structure Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Structure Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mplabx-code" class="md-nav__link">
+    MPLabX Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -668,9 +708,44 @@
   
 
 
-  <h1>API Documentation</h1>
-
 <h2 id="application-programming-interface-api">Application Programming Interface (API)</h2>
+<h2 id="team-member-ids">Team Member IDs</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Subsystem</th>
+<th>Address</th>
+<th>Char Add</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alex</td>
+<td>Actuator</td>
+<td><code>0x63</code></td>
+<td>'c'</td>
+</tr>
+<tr>
+<td>Aarshon</td>
+<td>HMI</td>
+<td><code>0x61</code></td>
+<td>'a'</td>
+</tr>
+<tr>
+<td>Ian</td>
+<td>Sensor</td>
+<td><code>0x69</code></td>
+<td>'i'</td>
+</tr>
+<tr>
+<td>KD</td>
+<td>Websocket</td>
+<td><code>0x6B</code></td>
+<td>'k'</td>
+</tr>
+</tbody>
+</table>
 <h2 id="outgoing-messages">Outgoing Messages</h2>
 <h3 id="subsystem-status-code">Subsystem Status Code</h3>
 <p>Message type for sending status code of subsystem "Z" to be displayed.</p>
@@ -727,44 +802,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="subsystem-error-message">Subsystem Error Message</h3>
-<p>Message type for sending string about subsystem error.</p>
-<table>
-<thead>
-<tr>
-<th>.</th>
-<th>byte 1</th>
-<th>byte 2-58</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Variable Name</td>
-<td>msg_type</td>
-<td>err_msg</td>
-</tr>
-<tr>
-<td>Variable Type</td>
-<td>uint8_t</td>
-<td>char array (uint8_t)</td>
-</tr>
-<tr>
-<td>Min Value</td>
-<td>5</td>
-<td>char[1]</td>
-</tr>
-<tr>
-<td>Max Value</td>
-<td>5</td>
-<td>char[57]</td>
-</tr>
-<tr>
-<td>Example</td>
-<td>5</td>
-<td>"sensor 1 read error"</td>
-</tr>
-</tbody>
-</table>
 <h2 id="received-messages">Received Messages</h2>
 <h3 id="shift-motor">Shift Motor</h3>
 <p>Message type for sending a command to rotate base stepper "Y" degrees.</p>
@@ -794,6 +831,8 @@
 </tr>
 </tbody>
 </table>
+<p>Example message according to message structure:
+AZic235YB</p>
 <h3 id="alignment-frequency">Alignment Frequency</h3>
 <p>Message type for sending a command to set the panel alignment frequency "X" number of seconds.</p>
 <table>
@@ -820,12 +859,63 @@
 <td>Max Value</td>
 <td>600</td>
 </tr>
+</tbody>
+</table>
+<p>Example message according to message structure:
+AZic3</p>
+<h1 id="message-structure-summary">Message Structure Summary</h1>
+<table>
+<thead>
 <tr>
-<td>## MPLabX Code</td>
-<td></td>
+<th>Byte Index</th>
+<th>Description</th>
+<th>Value Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>Start Byte 1</td>
+<td>'A'</td>
+</tr>
+<tr>
+<td>[1]</td>
+<td>Start Byte 2</td>
+<td>'Z'</td>
+</tr>
+<tr>
+<td>[2]</td>
+<td>Sender ID</td>
+<td>'c'</td>
+</tr>
+<tr>
+<td>[3]</td>
+<td>Receiver ID</td>
+<td>'a','k',etc.</td>
+</tr>
+<tr>
+<td>[4]</td>
+<td>msg_type</td>
+<td><code>1</code> - <code>5</code></td>
+</tr>
+<tr>
+<td>[5-n]</td>
+<td>Data / Message / Payload</td>
+<td>Varies</td>
+</tr>
+<tr>
+<td>[n+1]</td>
+<td>End Byte 1</td>
+<td>'Y'</td>
+</tr>
+<tr>
+<td>[n+2]</td>
+<td>End Byte 2</td>
+<td>'B'</td>
 </tr>
 </tbody>
 </table>
+<h2 id="mplabx-code">MPLabX Code</h2>
 <p><a href="../assets/documents/SolarArray.X.zip">Software</a></p>
 
 
