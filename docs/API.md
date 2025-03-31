@@ -1,6 +1,14 @@
  Application Programming Interface (API)
 ---
 
+## Team Member IDs
+Name    | Subsystem | Address | Char Add
+--------|-----------|-------- |---------
+Alex | Actuator       | `0x63`  |  'c'
+Aarshon | HMI     | `0x61`  |  'a'
+Ian     | Sensor    | `0x69`  |  'i'
+KD      | Websocket | `0x6B`  |  'k'
+
 ## Outgoing Messages
 
 ### Subsystem Status Code  
@@ -21,17 +29,6 @@ code number | meaning
 2 | no functionality
 
 
-### Subsystem Error Message  
-Message type for sending string about subsystem error.
-
-.             | byte 1   | byte 2-58
---------------|----------|----------
-Variable Name | msg_type | err_msg
-Variable Type | uint8_t  | char array (uint8_t)
-Min Value     | 5        | char[1]
-Max Value     | 5        | char[57]
-Example       | 5        | "sensor 1 read error"
-
 ## Received Messages
 
 ### Shift Motor  
@@ -44,6 +41,10 @@ Variable Type    | Y(uint8_t)
 Min Value        | 0
 Max Value        | 360
 
+Example message according to message structure:
+AZic235YB
+
+
 ### Alignment Frequency
   
 Message type for sending a command to set the panel alignment frequency "X" number of seconds.
@@ -54,6 +55,27 @@ Variable Name   | time
 Variable Type   | X(uint8_t) 
 Min Value      | 0    
 Max Value      | 600    
+
+Example message according to message structure:
+AZic3
+
+
+
+
+# Message Structure Summary
+ Byte Index |           Description              | Value Example |
+ -----------|------------------------------------|---------------|
+ [0]        | Start Byte 1                       |      'A'      |
+ [1]        | Start Byte 2                       |      'Z'      |
+ [2]        | Sender ID                          |      'c'      |
+ [3]        | Receiver ID                        | 'a','k',etc.  |
+ [4]        | msg_type                           |  `1` - `5`    |
+ [5-n]      | Data / Message / Payload           |    Varies     |
+ [n+1]      | End Byte 1                         |      'Y'      |
+ [n+2]      | End Byte 2                         |      'B'      |
+
+
+
 ## MPLabX Code
 
 [Software](./assets/documents/SolarArray.X.zip)
