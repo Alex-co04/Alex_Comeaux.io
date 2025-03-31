@@ -765,8 +765,8 @@
 </tr>
 <tr>
 <td>Variable Type</td>
-<td>uint8_t (Z)</td>
-<td>uint8_t</td>
+<td>char</td>
+<td>char</td>
 </tr>
 <tr>
 <td>Min Value</td>
@@ -809,7 +809,7 @@
 <thead>
 <tr>
 <th>.</th>
-<th>byte 1</th>
+<th>data byte 1-3</th>
 </tr>
 </thead>
 <tbody>
@@ -819,7 +819,7 @@
 </tr>
 <tr>
 <td>Variable Type</td>
-<td>Y(uint8_t)</td>
+<td>char</td>
 </tr>
 <tr>
 <td>Min Value</td>
@@ -827,19 +827,22 @@
 </tr>
 <tr>
 <td>Max Value</td>
-<td>360</td>
+<td>9</td>
 </tr>
 </tbody>
 </table>
 <p>Example message according to message structure:
-AZic235YB</p>
+AZic2300YB
+or 
+AZac2005YB
+This would read 300 and 5 degrees respectively</p>
 <h3 id="alignment-frequency">Alignment Frequency</h3>
 <p>Message type for sending a command to set the panel alignment frequency "X" number of seconds.</p>
 <table>
 <thead>
 <tr>
 <th>.</th>
-<th>byte 1</th>
+<th>data byte 1-3</th>
 </tr>
 </thead>
 <tbody>
@@ -849,7 +852,7 @@ AZic235YB</p>
 </tr>
 <tr>
 <td>Variable Type</td>
-<td>X(uint8_t)</td>
+<td>char</td>
 </tr>
 <tr>
 <td>Min Value</td>
@@ -857,12 +860,15 @@ AZic235YB</p>
 </tr>
 <tr>
 <td>Max Value</td>
-<td>600</td>
+<td>9</td>
 </tr>
 </tbody>
 </table>
 <p>Example message according to message structure:
-AZic3</p>
+AZic3025YB
+or
+AZic3005YB
+These messages would read 25 and 5 degrees respectively</p>
 <h1 id="message-structure-summary">Message Structure Summary</h1>
 <table>
 <thead>
