@@ -16,6 +16,9 @@ The following is the power budget for each component selected
 
  ![Image:Schematic](./assets/images/PowerBudget.jpg)
 
+ ## 📁 Download MPLABX Motor Functionality Code  
+[Download MPLABX Code](./assets/documents/mainALEXCFinal.c)
+
 ## 📁 Download the Schematic Diagram  
 [Download Schematic Diagram PDF](./assets/documents/314SchematicDesign.pdf)
 
