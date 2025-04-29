@@ -34,18 +34,13 @@ code number | meaning
 ### Shift Motor  
 Message type for sending a command to rotate base stepper "Y" degrees.
 
-. | data byte 1-3     
+. | data byte 1     
 -------|------------
 Variable Name    | degree_turn
-Variable Type    | char
+Variable Type    | uint8
 Min Value        | 0
-Max Value        | 9
+Max Value        | 180
 
-Example message according to message structure:
-AZic2300YB
-or 
-AZac2005YB
-This would read 300 and 5 degrees respectively
 
 ### Alignment Frequency
   
