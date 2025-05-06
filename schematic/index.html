@@ -301,6 +301,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources.md" class="md-tabs__link">
+        
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -497,25 +514,31 @@
     PCB Design
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#power-budget" class="md-nav__link">
-    Power Budget
+    <nav class="md-nav" aria-label="PCB Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-image" class="md-nav__link">
+    Front image
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rear-image" class="md-nav__link">
+    Rear image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-the-schematic-diagram" class="md-nav__link">
-    📁 Download the Schematic Diagram
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-the-schematic-zip-file" class="md-nav__link">
-    📁 Download the Schematic Zip File
+  <a href="#hardware-design-reflection" class="md-nav__link">
+    Hardware Design Reflection
   </a>
   
 </li>
@@ -539,6 +562,25 @@
   
   <span class="md-ellipsis">
     API Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
   </span>
   
 
@@ -592,25 +634,31 @@
     PCB Design
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#power-budget" class="md-nav__link">
-    Power Budget
+    <nav class="md-nav" aria-label="PCB Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-image" class="md-nav__link">
+    Front image
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rear-image" class="md-nav__link">
+    Rear image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-the-schematic-diagram" class="md-nav__link">
-    📁 Download the Schematic Diagram
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-the-schematic-zip-file" class="md-nav__link">
-    📁 Download the Schematic Zip File
+  <a href="#hardware-design-reflection" class="md-nav__link">
+    Hardware Design Reflection
   </a>
   
 </li>
@@ -640,20 +688,16 @@
 
 <h1 id="schematic">Schematic</h1>
 <h2 id="overview">Overview</h2>
-<p>This page contains the schematic diagram for this subsystem</p>
+<p>This page contains the schematic diagram for this subsystem. The design of this PCB is primarily meant to accomplish two objectives. One, that it includes all the necessary requirements given to us for this class. And two, that it allows any student in the k-12 system to grasp certain concepts in both embedded systems and weather monitoring. In terms of this first objective this PCB design incorporates all the the necessary design criteria outlined in the syllabus. No daughter-boards, all surface mount components, two switching voltage regulators, and is designed to be modular with any other PCB capable of two-way UART communication. Circling back to the first objective, the whole purpose of this design is to create a smart weather station to help k-12 students understand how weather stations and other electronic devices collect and process data. The intention of this particular subsystem is to control the motors for the solar array, one to adjust the tilt angle of the panel and the other to change the angle of the base. Receiving the data from the sensor system, processing it, and then changing the angle of the base or panel given that information is a key part of how this weather station demonstrates the capabilities of modular micro-controllers.</p>
 <h2 id="schematic-image">Schematic Image</h2>
 <p><a class="glightbox" href="../assets/images/schematicimage.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:Schematic" src="../assets/images/schematicimage.jpg" /></a></p>
 <h2 id="pcb-design">PCB Design</h2>
-<p><a class="glightbox" href="../assets/images/image.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:PCB" src="../assets/images/image.jpg" /></a></p>
-<h2 id="power-budget">Power Budget</h2>
-<p>The following is the power budget for each component selected</p>
-<p><a class="glightbox" href="../assets/images/PowerBudget.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:Schematic" src="../assets/images/PowerBudget.jpg" /></a></p>
-<p>## 📁 Download MPLABX Motor Functionality Code<br />
-<a href="../assets/documents/mainALEXCFinal.c">Download MPLABX Code</a></p>
-<h2 id="download-the-schematic-diagram">📁 Download the Schematic Diagram</h2>
-<p><a href="../assets/documents/314SchematicDesign.pdf">Download Schematic Diagram PDF</a></p>
-<h2 id="download-the-schematic-zip-file">📁 Download the Schematic Zip File</h2>
-<p><a href="../assets/zip-files/SolarArray%20%282-21-2025%2011-11-12%20PM%29.zip">Download Schematic Zip File</a></p>
+<h3 id="front-image">Front image</h3>
+<p><a class="glightbox" href="../assets/images/FrontPCBimg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:PCB" src="../assets/images/FrontPCBimg.png" /></a></p>
+<h3 id="rear-image">Rear image</h3>
+<p><a class="glightbox" href="../assets/images/RearPCBimg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image:PCB" src="../assets/images/RearPCBimg.png" /></a></p>
+<h2 id="hardware-design-reflection">Hardware Design Reflection</h2>
+<p>There are several things I could have done differently in order to improve the hardware of this design. However, overall my design was a success and needed nearly zero additions to enable functionality. There was only one minor mistake made in terms of the schematic design, in that for the 3.3 volt regulator I was missing a capacitor in series with C7. This was a simple fix. Other than that, I believe that if I had better organized the pinout of the PIC, I could have fit all of the components on one single layer, reducing the potential manufacturing cost. More than this, I most definitely could have included more test points. A lack of test points proved to be annoying, to say the least. In the end, this schematic design proved to be pretty functional and easy to integrate with the other subsystems on the team.</p>
 
 
 

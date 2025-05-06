@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#block-diagram" class="md-skip">
           Skip to content
         </a>
       
@@ -301,6 +301,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources.md" class="md-tabs__link">
+        
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -382,6 +399,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -410,6 +429,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -420,6 +441,13 @@
         <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process" class="md-nav__link">
+    Decision-Making Process
   </a>
   
 </li>
@@ -508,6 +536,25 @@
   
 
     
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -525,6 +572,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -535,6 +584,13 @@
         <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process" class="md-nav__link">
+    Decision-Making Process
   </a>
   
 </li>
@@ -562,11 +618,12 @@
   
 
 
-  <h1>Block Diagram</h1>
-
+<h1 id="block-diagram">Block Diagram</h1>
 <h2 id="overview">Overview</h2>
-<p>This page contains the block diagram for my motor subsystem. The block diagram includes two motor driver blocks, one for the stepper motor and the DC motor. Additionally, the MCU will be equipped with UART, SPI, and an ADC module. The UART will be used for upstream and downstream communication, the SPI for motor control, and the ADC for confirming sensor data and for debugging.</p>
-<p><a class="glightbox" href="../assets/images/Block_diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Block-Diagram" src="../assets/images/Block_diagram.png" /></a></p>
+<p>This page contains the block diagram for my motor subsystem. The block diagram includes two motor driver blocks, one for the stepper motor and the DC motor. The DC motor is controlled by an SPI motor driver, with a wide range of command and debug capabilities. Additionally, the MCU will be equipped with a UART module. The UART will be used for upstream and downstream communication to other subsystems, as well as for receiving the motor commands and necessary movement angles.</p>
+<p><a class="glightbox" href="../assets/images/Block_Diagram_Final.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Block-Diagram" src="../assets/images/Block_Diagram_Final.png" /></a></p>
+<h2 id="decision-making-process">Decision-Making Process</h2>
+<p>At the beginning of this project, the block diagram included several other components, such as independent photoresistors, a limit switch and a second DC motor. However, after review and PCB design, I came to the conclusion that the design needed to be as simple as possible. For this reason, there is only one DC motor that spins bi-directionally, and reading off the photoresistors as well as processing the logic is done in the sensor suite subsystem. These changes have enabled our team to properly delegate the work between each subsystem.</p>
 
 
 
