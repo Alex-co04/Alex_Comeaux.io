@@ -15,4 +15,4 @@ Embedded Systems student attending Arizona State University. This project is par
 
 Team Website: [Click Here](https://egr314-2025-s-306.github.io/EGR314-Team306/)
 
-[API](./API.md)
+[API Message Protocol](./API.md)

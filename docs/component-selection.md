@@ -6,9 +6,9 @@ The purpose of this project is to create an interactive and educational product 
 
 ## Criteria
 
-In order for this project to be successful, there are many criteria that must be met. Most importantly, the device must be functional and functional for long enough to serve as a useful teaching tool. In order to accomplish this, parts must be selected with quality and robustness in mind. Furthermore, the budget must be taken into consideration as well. If parts get too expensive, it is easy to exceed the projected budget. But most importantly, the parts were selected with compatability in mind. If the parts struggle to interface with each other, we will create unnecessary roadblocks for our team further down the line. Overall, the criteria for each selected part included quality, cost, and compatability among other things. 
+In order for this project to be successful, there are many criteria that must be met. Most importantly, the device must be functional and functional for long enough to serve as a useful teaching tool. In order to accomplish this, parts must be selected with quality and robustness in mind. Furthermore, the budget must be taken into consideration as well. If parts get too expensive, it is easy to exceed the projected budget. But most importantly, the parts were selected with compatability in mind. If the parts struggle to interface with each other, we will create unnecessary roadblocks for our team further down the line. Overall, the criteria for each selected part included quality, cost, and compatability among other things.
 
-# Components 
+# Components
 
 ## Microcontroller
 ### Option 1
@@ -135,19 +135,18 @@ This project will require two seperate voltage lines, and therefore two voltage 
 | | Can handle high voltage in (up to 24V)  |
 
 ## Final Selection: LM2575T (Option 1)
+
 ![Photo-Resistor](./assets/images/Switching_regulator.jpg)
 #### Rationale:
-I came to the conclusion that the first option would be best, as I need a robust and easy to interface voltage regulator. The first option has a very detailed datasheet with several example application diagrams, which will streamline the power supply process. 
+I came to the conclusion that the first option would be best, as I need a robust and easy to interface voltage regulator. The first option has a very detailed datasheet with several example application diagrams, which will streamline the power supply design process.
 
 ## 3.3V Line
-
-
 
 ### Option 1
 | **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
 | --- | --- | --- | --- |
-| **LMR16006YQ3DDCRQ1 Buck Converter**   | 600mA output current |Mildly complicated application diagram| $3.49 (Digikey) (https://www.digikey.com/en/products/detail/texas-instruments/LMR16006YQ3DDCRQ1/5395814?s=N4IgTCBcDaIDIFkBKBGAbABg2gmgRQGYARIgYSTxRAF0BfIA)
-| |  6-40V input voltage |Potential for swtiching noise
+| **AP63203WU-7 Switching Regulator**   | 2A output current |Mildly complicated application diagram| $1.38 (Digikey) (https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426?s=N4IgTCBcDaIIIAUBsBmMAGFB1AqgWgHYQBdAXyA)
+| |  6-40V input voltage |Potential for switching noise
 | | Inexpensive  |
 | 
 
@@ -159,37 +158,34 @@ I came to the conclusion that the first option would be best, as I need a robust
 | | Efficient  |
 | 
 
-## Final Selection: Buck converter (Option 1)
+## Final Selection: Switching Regulator (Option 1)
 ![BuckConverter](./assets/images/BuckConverter.jpg)
 #### Rationale:
-I ultimately decided that the buck converter would be the best choice for this application. Not only is it reliable and cheap, it would supply more than enough amperage for the microcontroller and the external motor drivers. 
+I ultimately decided that the switching regulator would be the best choice for this application. Not only is it reliable and cheap, it would supply more than enough amperage for the logic on the microcontroller and other drivers. 
 
-## Light Detection 
+## Final Major Components Selected:
 
-### Option 1
-| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
-| --- | --- | --- | --- |
-| **PDV-P9203 Photo-resistor**   | Cost effective |Tolerance in resistance varies, requires tuning| $1.15 (Digikey) (https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628?s=N4IgTCBcDaIAoBEBqBaOBOMAGAzCAugL5A)
-| |  Simple to interface | Slow response time
-| | Wide dynamic range, good for detecting most visible wavelengths  |
-| 
+Component Name      | Selection
+--------------------|-----------------
+Microcontroller     | PIC18F47Q10-I/QT  
+Volatage Regulator 3.3  | AP63203WU-7  
+Voltage Regulator 5.0  | LM2575  
+DC Motor Driver  | IFX9201SG  
+Stepper Motor Driver     | ULN2003  
+Stepper Motor | 1528-1367-ND
 
-### Option 2
-| **Option** | **Pros** | **Cons** | **Unit Cost & Link** |
-| --- | --- | --- | --- |
-| **TEPT4400 Phototransistor**   | Faster response time |More difficult to implement, more surrounding circuitry| $.48 (Digikey) (https://www.digikey.com/en/products/detail/stmicroelectronics/ULN2003A/599603)
-| |  More linear and consistent readings | Designed only for unipolar motors
-| | Extremely cost effective  | Narrower wavelength sensitivity
-| 
+## Power Budget
+The following is the power budget for each component selected
 
-## Final Selection: PDV-P9203 Photo-resistor (Option 1)
-![Photo-Resistor](./assets/images/photresistor.jpg)
-#### Rationale:
-I decided that the best visible light detector for the solar array is the PDV-P9203 Photo-resistor. This is because it will be the easiest to interface with the PIC microcontroller. Additionally, there are many example project online using the same photo-resistor. 
+ ![Image:Schematic](./assets/images/PowerBudget.jpg)
+
+ I used the power budget in order to estimate how much power the system would be pulling if it was using all of its capability at once. This way, I could plan accordingly as I designed by PCB and ordered fuses. The final current draw, 1400 mA, seems high but it would only reach this number if both motors were running at full speed. Since I knew that the system should never exceed 1400 mA, I ordered a 1.5 A fuse to protect the circuit in case of a short. 
+
+## MCC Setup
+![Image:MCC](./assets/images/MCCfinal.png)
+
+##  Final Decision-Making Process
+
+There were many factors that went into choosing each component that would be on the final PCB. For one, all of the motor drivers had to be compatible with the PIC MCU. I wanted to find drivers that would work without needed overly complex code. The SPI driver is a good example of this, as it requires only three lines of code to turn the motor one way or another. Additionally, there are two separate voltage regulators on this board. I did this because I found it would be more reliable to run all the logic of each chip off of one 3.3 volt line, and run the motors off their own 5 volt line, reducing the risk of current overdraw and noise. In order to meet all the project requirements, I ensured all the components were surface mount, and included a motor driver that uses a serial communication protocol to send and receive messages. 
 
 
-
-## Basic MCC Setup
-![Image:MCC](./assets/images/image_2025-02-07_183502901.png)
-
-This is my rudamentary setup for the microcontroller's MCC in MPLabX. As you can see, there are pins designated for the SPI Motor Driver, PWM for the stepper, as well as UART TX and RX pins for upstream and downstream communication.

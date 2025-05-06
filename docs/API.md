@@ -14,7 +14,6 @@ KD      | Websocket | `0x6B`  |  'k'
 ### Subsystem Status Code  
 Message type for sending status code of subsystem "Z" to be displayed.
 
-
 . | byte 1     | byte 2
 -------|------------|---
 Variable Name   | msg_type | error_code
@@ -28,38 +27,22 @@ code number | meaning
 1 | partial functionality
 2 | no functionality
 
+### Error Message
+Message that contains specific error message
+byte 1 | byte 2-58
+-------|----------------------------
+`0x34` | Error Message char(`uint8_t`)
+
 
 ## Received Messages
 
 ### Shift Motor  
 Message type for sending a command to rotate base stepper "Y" degrees.
 
-. | data byte 1     
--------|------------
-Variable Name    | degree_turn
-Variable Type    | uint8
-Min Value        | 0
-Max Value        | 180
-
-
-### Alignment Frequency
-  
-Message type for sending a command to set the panel alignment frequency "X" number of seconds.
-
-. |  data byte 1-3     
--------|------------
-Variable Name   | time 
-Variable Type   | char 
-Min Value      | 0    
-Max Value      | 9    
-
-Example message according to message structure:
-AZic3025YB
-or
-AZic3005YB
-These messages would read 25 and 5 degrees respectively
-
-
+byte 1 | byte 2       | byte 3
+-------|--------------|---
+`0x32` | X(`uint8_t`) | Y(`uint8_t`)
+~      | direction<br>0x01 = clockwise<br>0x02 = counterclockwise | degree shift
 
 
 # Message Structure Summary
@@ -76,6 +59,3 @@ These messages would read 25 and 5 degrees respectively
 
 
 
-## MPLabX Code
-
-[Software](./assets/documents/SolarArray.X.zip)
