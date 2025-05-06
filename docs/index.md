@@ -16,3 +16,18 @@ Embedded Systems student attending Arizona State University. This project is par
 Team Website: [Click Here](https://egr314-2025-s-306.github.io/EGR314-Team306/)
 
 [API Message Protocol](./API.md)
+
+# Resources
+
+## 📁 Download the MPLABX Environment
+
+[Download MPLABX Code](./assets/zip-files/MPLABXfile.zip)
+
+## 📁 Download the PCB File
+
+[Download Schematic Diagram PDF](./assets/zip-files/PCBfile.zip)
+
+## 📁 Download CAD file
+
+[Download CAD file](.assets/zip-files/SolarArrayAssembly.zip)
+

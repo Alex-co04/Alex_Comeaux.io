@@ -21,3 +21,4 @@ This page contains the schematic diagram for this subsystem. The design of this 
 ## Hardware Design Reflection
 
 There are several things I could have done differently in order to improve the hardware of this design. However, overall my design was a success and needed nearly zero additions to enable functionality. There was only one minor mistake made in terms of the schematic design, in that for the 3.3 volt regulator I was missing a capacitor in series with C7. This was a simple fix. Other than that, I believe that if I had better organized the pinout of the PIC, I could have fit all of the components on one single layer, reducing the potential manufacturing cost. More than this, I most definitely could have included more test points. A lack of test points proved to be annoying, to say the least. In the end, this schematic design proved to be pretty functional and easy to integrate with the other subsystems on the team.
+
